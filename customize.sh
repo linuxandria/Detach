@@ -47,7 +47,7 @@ ui_print " "
 ui_print "- Detach $Detach_version"
 ui_print "- By Rom @ xda-developers"
 ui_print " "
-ui_print "- Checking pre-requests"
+ui_print "- Checking prerequisites"
 sleep 1;
 
 
@@ -59,7 +59,7 @@ fi
 
 
 sleep 1;
-ui_print "- Pre-request checks done"
+ui_print "- Prerequisites check done"
 
 sleep 1;
 ui_print "- Prepare stuff"
@@ -89,14 +89,14 @@ UP_SERVICESSH=$MODPATH/service.sh
 if [ -e "$UP_SERVICESSH" ] && test ! "$CONF_BAD"; then
 	CTSERVICESH=$(awk 'END{print NR}' $UP_SERVICESSH)
 	if [ "$CTSERVICESH" -gt "32" ]; then
-		ui_print "- Cleanup file.."
+		ui_print "- Cleanup ervice script file.."
 		sed -i -e '32,$d' "$SERVICESH"
 	fi
 fi
 
 
 sleep 1;
-test ! "$CONF_BAD" && ui_print "- Prepare done" || abort '- Wrong module setup'
+test ! "$CONF_BAD" && ui_print "- Preparation done" || abort '- Wrong module setup'
 sleep 1;
 }
 
